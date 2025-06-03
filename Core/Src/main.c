@@ -75,9 +75,9 @@ int MHZ19B_GetCO2() {
 	HAL_StatusTypeDef rx = HAL_UART_Receive(MHZ19B_UART, response, 9, 100);
     if (tx == HAL_OK && rx == HAL_OK) {
         uint16_t co2 = (response[2] << 8) | response[3];
-    	char checksum;
-    	for(int i = 1; i < 8; i++)
-    		checksum += response[i];
+        uint8_t checksum = 0;
+        for(int i = 1; i < 8; i++)
+                checksum += response[i];
     	checksum = 0xff - checksum;
     	checksum++;
     	if(checksum == response[8])
