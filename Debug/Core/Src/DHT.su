@@ -1,3 +1,0 @@
-../Core/Src/DHT.c:8:13:goToOutput	32	static
-../Core/Src/DHT.c:18:13:goToInput	32	static
-../Core/Src/DHT.c:26:10:DHT_getData	48	static,ignoring_inline_asm
