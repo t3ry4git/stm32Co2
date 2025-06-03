@@ -246,7 +246,8 @@ void ssd1306_I2C_Write(uint8_t address, uint8_t reg, uint8_t data);
  * @param  address: 7 bit slave address, left aligned, bits 7:1 are used, LSB bit is not used
  * @param  reg: register to write to
  * @param  *data: pointer to data array to write it to slave
- * @param  count: how many bytes will be written
+ * @param  count: how many bytes will be written. This value is limited
+ *         to 255 bytes internally.
  * @retval None
  */
 void ssd1306_I2C_WriteMulti(uint8_t address, uint8_t reg, uint8_t *data, uint16_t count);
